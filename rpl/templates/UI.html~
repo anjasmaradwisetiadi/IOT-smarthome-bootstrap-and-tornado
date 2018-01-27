@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DEVICE CONTROLER</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ static_url("css/bootstrap.min.css") }}">
+  <script src="{{ static_url("js/jquery-3.2.1.min.js") }}"></script>
+  <script src="{{ static_url("js/bootstrap.min.js") }}"></script>
+  <script src="{{ static_url("UI_JAVS.js") }}"></script>
+  <!--script src="{{ static_url("ws-client.js") }}"></script-->
+  <link rel="stylesheet" href="{{static_url("About.html")}}">
+  <link rel="stylesheet" href="Using.html">
+  <!--<link rel="stylesheet" type="text/css" href="{{ static_url("file_css.css") }}">-->
+    <link rel="stylesheet" href="{{static_url("About.html")}}">
+  
+ <!-- <link rel="stylesheet" type="text/css" href="css/indexing.css"></script> -->
+
+
+</head>
+<body>
+<!--tampilan headline-->
+<div>
+<div class="container-fluid" style="background-color: #00ccff;"  >
+ <div class="container">
+
+ <div class="row" >  
+  <div class="col-md-6" >
+   <div class="nav navbar-nav nav navbar-left " height="200"  >
+  	 <h5   style="font-family:georgia,garamond,serif; font-weight:bold; font-size: 18px;  color:#FFFFFF;" align="center">Device Controler Anjas</h5>
+     <!--    id ="titel" -->
+   </div>
+  </div>
+
+
+  <!--list daftar down-->
+  <div class="col-md-6"  >
+  <div class="nav navbar-nav nav navbar-right "  >
+   <div class="dropdown">
+ 
+  <button  class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" align="center" style="background-color: #00ccff; border: none; width:40px; font-size: 24px; color: #FFFFFF; height: 40px;">
+    <!--buton dropdown justify masih perlu border: 10px;-->
+    
+  <span  class="glyphicon glyphicon-menu-hamburger" aria-hidden="true" background-color= "#00ccff" ></span></button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <li><a href="UI.html">Home</a></li>
+     <li><a href="static/About.html" >About</a></li>
+    <li><a href="Using.html" target= "_blank">Using</a></li>
+  </ul>
+</div>
+
+   </div>
+   </div>
+ </div>
+</div>
+</div>
+<!--akhir tampilan headline -->
+<div align="center">
+	<h2 align="center" style="font-family: Clarendon Blk BT,garamond,serif; font-weight: bolder;">Controling SmartHome STAIN_KILLER</h2>
+	<br>
+
+	<p> Silahkan Pilih Device Yang Anda Akan Control </p>
+</div>
+
+<!-- masih salah panjang pada dropdown Pilih -->
+<div class="container" >
+ <div class="row">
+  <div class="col-md-2">
+    
+  </div>
+
+  <div class="col-md-8" align="center"> 
+   <div class="btn-group"  >
+   <button type="button" class="btn btn-default  dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width: 400px;" >
+     <a>Pilih <span ></span></a>
+  </button>
+   <ul class="dropdown-menu" style="width: 400px;">
+    <li><a href="#" id="Tombol_Action">Lampu</a></li>
+    <li><a href="#" id="Tombol_AC_Action">AC</a></li>
+    <li><a href="#">Lockdoor</a></li>
+  </ul>
+</div>
+</div>
+
+
+  <div class="col-md-2">
+    
+  </div>
+<br>
+<br>
+<br>
+<div align="center" >
+<div id="Panel_Action"  class="panel panel-default" style="width:500px; display: none;" ><!--display :none untuk menampilkan hilang -->
+  <!-- Default panel contents -->
+  <div class="panel-heading" align="center" style="">Lampu</div>
+
+  <!-- Table -->
+  <table class="table">
+    <tbody>
+      <tr>
+        <td>Device Location</td>
+        <td>Lampu Philips</td>
+      </tr>
+      <tr>
+        <td>Location</td>
+        <td>Kamar Tidur</td>
+      </tr>
+      <tr>
+        <td>Group/Type</td>
+        <td>LED</td>
+      </tr>
+      <tr>
+        <td>Load(Watt)</td>
+        <td>28</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>
+  <!-- <tr>
+    <td align="right">
+    <button id="tombol_button" class="btn btn-default" type="button" style="font-family: Clarendon Blk BT,garamond,serif; font-weight: bolder;">Hidup</button>
+      </td>
+    <td align="left">
+      <button id="tombol_stream" class="btn btn-default" type="button"><b>Mati</b></button>
+    </td>
+    </tr> -->
+      
+    </tbody>
+  </table>
+
+  <div class="row" align="center" >
+ 
+</div>
+<button  id="tombol_button" class="btn btn-default" type="button" style="font-family: Clarendon Blk BT,garamond,serif; font-weight: bolder;">Mati</button>
+</div>
+</div>
+
+
+<br>
+
+<div align="center" >
+<div id="Panel_AC"  class="panel panel-default" style="width:500px; display: none;" ><!--display :none untuk menampilkan hilang -->
+  <!-- Default panel contents -->
+  <div class="panel-heading" align="center" style="">AC</div>
+
+  <!-- Table -->
+  <table class="table">
+    <tbody>
+      <tr>
+        <td>Device Location</td>
+        <td>AC Samsung</td>
+      </tr>
+      <tr>
+        <td>Location</td>
+        <td>Kamar Tidur</td>
+      </tr>
+      <tr>
+        <td>Group/Type</td>
+        <td>Relay</td>
+      </tr>
+      <tr>
+        <td>Load(Watt)</td>
+        <td>500</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+      </tr>    
+    </tbody>
+  </table>
+
+  <div class="row" align="center" >
+
+</div>
+<button  id="Tombol_AC" class="btn btn-default" type="button" style="font-family: Clarendon Blk BT,garamond,serif; font-weight: bolder;">Mati</button>
+</div>
+</div>
+
+
+<div valign=center id="ws-status"> Waiting... </div>
+</body>
+
+</html>
+

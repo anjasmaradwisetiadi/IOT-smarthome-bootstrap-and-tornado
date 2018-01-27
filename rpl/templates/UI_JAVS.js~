@@ -1,0 +1,68 @@
+
+$(document).ready(function(){
+
+        var WEBSOCKET_ROUTE = "/ws";
+
+        if(window.location.protocol == "http:"){
+            //localhost
+            var ws = new WebSocket("ws://" + window.location.host + WEBSOCKET_ROUTE);
+            }
+        else if(window.location.protocol == "https:"){
+            //Dataplicity
+            var ws = new WebSocket("wss://" + window.location.host + WEBSOCKET_ROUTE);
+            }
+
+        ws.onopen = function(evt) {
+            $("#ws-status").html("Connected");
+            };
+
+        ws.onmessage = function(evt) {
+            };
+
+        ws.onclose = function(evt) {
+            $("#ws-status").html("Disconnected");
+            };
+$(function () {
+  $("#Tombol_tombol").click(function (events) {
+    $("#Panel_tombol").slideToggle()
+    events.preventDefault()//untuk referesh tanpa tambah #
+  })
+  $("#Tombol_Action").click(function (events) {
+    $("#Panel_Action").slideToggle()
+    events.preventDefault()
+  })
+ //tombol warna
+ var stateLampuOn=true;
+ $("#tombol_button").click(function (events) {
+    //$(this).toggleClass("btn-primary")
+    //events.preventDefault()//untuk referesh tanpa tambah #
+    if(stateLampuOn){
+      $(this).toggleClass ("btn-primary");
+      $(this).removeClass ("btn-default");
+      $("#tombol_button").text("Hidup")
+      stateLampuOn=false;
+      ws.send("on_g")
+    }
+    else{
+      $(this).toggleClass ("btn-default");
+      $(this).removeClass ("btn-primary");
+      $("#tombol_button").text("Mati")
+      stateLampuOn=true;
+      ws.send("off_g");
+    }
+  })
+ $("#tombol_2_off").click(function (events) {
+    $(this).toggleClass("btn-success")
+   /*$("#tombol_button").addClass("btn-default")*/
+    events.preventDefault()//untuk referesh tanpa tambah #
+
+  })
+ $("#tombol_2_on").click(function (events) {
+    $(this).toggleClass("btn-primary")
+   /*$("#tombol_button").addClass("btn-default")*/
+    events.preventDefault()//untuk referesh tanpa tambah #
+
+  })
+
+})
+  

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<script src="bootstrap/js/jquery-3.2.1.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="UI_JAVS.js"></script>
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
+
+
+</head>
+<style>
+	.container{
+		width: 60%;
+		
+	}
+	.clear{
+		clear: both;
+	}
+	body, html {
+	    height: 100%;
+	    background-repeat: no-repeat;
+	    background-image: url('back.jpg');
+	    background-size: cover;
+	}
+	
+
+	.headers{
+		background-color: #44996A;
+		padding-bottom: 20px;
+		padding-top: 20px;
+	}
+	.headers .fa{
+		background-color: #fff;
+		margin-left: 30px;
+	}
+	.content{
+		padding-bottom: 20px;
+		padding-top: 20px;
+		background-color: white;
+		
+	}
+	h1{
+		color: #fff;
+		text-align: center;
+		font-weight: bold;
+		font-family: rockwell;
+	}
+	.fa{
+		color: #44996A;
+		border:none;
+		margin: auto;
+		width: 130px;
+		height: 100px;
+		margin: 0 auto;
+	}
+	
+
+	.row{
+		border:1px solid #000;
+		padding: 20px;
+		width: 250px;
+		margin: auto;
+		
+	}
+	.logout{
+		
+		width: 200px;
+		margin: 0 auto;
+		margin-bottom: 20px;
+	}
+	.btn-success{
+		background-color: #44996A;
+		width: 200px;	
+		border-radius: 5px;
+	}
+	.back{
+		
+		width: 50px;
+		height: 50px;
+		margin: auto;
+	}
+	
+	
+
+	/*Responsive handphone*/
+	@media (max-width: 575px) {
+		.ma{
+			display: none;
+		}
+		body{
+			background-image: none;
+			background-color: white;
+		}
+		.container{
+			background-color: blue;
+			width: 100%;
+			padding: 0;
+
+		}
+		.content{
+			
+		}
+	}
+
+
+
+}
+
+
+
+
+</style>
+
+<style>
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+</style>
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.back').click(function(){
+			var menu = $(this).attr('id');
+			if(menu == "home"){
+				$('.back').load('home.html');						
+			}
+		});
+ 
+ 
+		// halaman yang di load default pertama kali
+		$('.badan').load('home.php');						
+ 
+	});
+
+	$(function() {
+	  $('input[type="checkbox"]').bootstrapToggle();
+	})
+</script>
+
+
+<body>
+	
+		<div class="ma">
+			.
+		</div>
+
+		<div class="container">
+			<div class="headers">
+				<i class="fa fa-lightbulb-o fa-5x text-center" aria-hidden="false"></i><span style="font-size: 35px; font-weight: bold; color: white; margin-left: 10px">PET</span>
+			</div>
+
+			<div class="content">
+				<div class="row">	
+					     	<table>
+					    	<tr>
+					    		<td>Device </td>
+					    		<td> : </td>
+					    		<td> PET</td>
+					    	</tr>
+					    	<tr>
+					    		<td>Location </td>
+						    	<td> : </td>
+						    	<td> Ruang Tamu</td>
+					    	</tr>
+					    	<tr>
+					    		<td>Group Type </td>
+						    	<td> : </td>
+						    	<td> Relay</td>
+					    	</tr>
+					    	<tr>
+					    		<td>Watt </td>
+						    	<td> : </td>
+						    	<td> 24W</td>
+					    	</tr>
+						    	
+					    </table>
+					    <br><br>
+					    <label class="switch">
+						  <input type="checkbox">
+						  <span class="slider round"></span>
+						</label>
+					    <br>
+					    <div class="back">
+							<a href="home.html" id="back"><i class="fa fa-arrow-left fa-3x" aria-hidden="true"></i></a>
+						</div>
+					   
+					</div>
+				</div>
+
+			</div>
+
+
+		</div>  
+
+</body>
+</html>

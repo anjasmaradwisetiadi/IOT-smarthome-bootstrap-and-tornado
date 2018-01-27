@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Device Control</title>
+	<meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href=" {{ static_url("css\bootstrap.min.css") }} ">
+	<script src="{{ static_url("js\jquery-3.2.1.min.js") }}"></script>
+	<link rel="stylesheet" href="{{ static_url("font-awesome/css/font-awesome.min.css") }}"  >
+
+
+</head>
+<style>
+	.container{
+		width: 60%;
+		
+	}
+	.clear{
+		clear: both;
+	}
+	body, html {
+	    height: 100%;
+	    background-repeat: no-repeat;
+	    background-image: url('{{ static_url('gambar/back.jpg')}}' );
+	    background-size: cover;
+	}
+	
+
+	.headers{
+		background-color: #44996A;
+		padding-bottom: 20px;
+		padding-top: 20px;
+	}
+	.content{
+		padding-bottom: 20px;
+		padding-top: 20px;
+		background-color: white;
+		
+	}
+	h1{
+		color: #fff;
+		text-align: center;
+		font-weight: bold;
+		font-family: rockwell;
+	}
+	.fa{
+		color: #44996A;
+		border:none;
+		margin: auto;
+		width: 130px;
+		height: 100px;
+		margin: 0 auto;
+	}
+	
+
+	.row{
+		padding: 20px;
+	}
+	.logout{
+		
+		width: 200px;
+		margin: 0 auto;
+		margin-bottom: 20px;
+	}
+	.btn-success{
+		background-color: #44996A;
+		width: 200px;	
+		border-radius: 5px;
+	}
+	
+	
+
+	/*Responsive handphone*/
+	@media (max-width: 575px) {
+		.ma{
+			display: none;
+		}
+		body{
+			background-image: none;
+			background-color: white;
+		}
+		.container{
+			background-color: blue;
+			width: 100%;
+			padding: 0;
+
+		}
+		.content{
+			
+		}
+	}
+
+
+
+}
+
+</style>
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.thumbnail').click(function(){
+			var menu = $(this).attr('id');
+			if(menu == "lampu"){
+				$('.lamp').load('lamp.html');						
+			}else if(menu == "tv"){
+				$('.tv').load('tv.html');						
+			}else if(menu == "ac"){
+				$('.ac').load('ac.htmnl');						
+			}else if(menu == "pintu"){
+				$('.pintu').load('pintu.html');						
+			}else if(menu == "pet"){
+				$('.pet').load('pet.html');						
+			}else if(menu == "pagar"){
+				$('.pagar').load('pagar.html');						
+			}
+
+		});
+ 
+ 
+		// halaman yang di load default pertama kali						
+ 
+	});
+
+	function logout(){
+		window.location = "login.html";
+	}
+</script>
+
+
+<body>
+	
+		<div class="ma">
+			.
+		</div>
+
+		<div class="container">
+			<div class="headers">
+				<h1>MissHome</h1>
+			</div>
+
+			<div class="content">
+				<div class="row text-center">
+				  <div class="col-xs-6 col-md-4 text-center">
+				    <a href="lamp.html" class="thumbnail text-center" id="lamp">
+				     	<i class="fa fa-lightbulb-o fa-5x" aria-hidden="false"></i>
+				     	<div class="caption">
+				     		<span>LAMP</span>
+				     	</div>
+				    </a>
+				  </div>
+
+				  <div class="col-xs-6 col-md-4">
+				    <a href="tv.html" class="thumbnail text-center">
+				     	<i class="fa fa-television fa-5x" aria-hidden="true"></i>
+				     	<div class="caption">
+				     		<span>TV</span>
+				     	</div>
+				    </a>
+				  </div>
+
+				  <div class="col-xs-6 col-md-4">
+				    <a href="ac.html" class="thumbnail text-center">
+				     	<i class="fa fa-lightbulb-o fa-5x" aria-hidden="false"></i>
+				     	<div class="caption">
+				     		<span>AC</span>
+				     	</div>
+				    </a>
+				  </div>
+
+				  
+
+				  <div class="col-xs-6 col-md-4">
+				    <a href="pintu.html" class="thumbnail text-center">
+				     	<i class="fa fa-home fa-5x" aria-hidden="false"></i>
+				     	<div class="caption">
+				     		<span>PINTU</span>
+				     	</div>
+				    </a>
+				  </div>
+
+				  <div class="col-xs-6 col-md-4">
+				    <a href="pet.html" class="thumbnail text-center">
+				     	<i class="fa fa-lightbulb-o fa-5x" aria-hidden="false"></i>
+				     	<div class="caption">
+				     		<span>PET</span>
+				     	</div>
+				    </a>
+				  </div>
+
+				  <div class="col-xs-6 col-md-4">
+				    <a href="pagar.html" class="thumbnail text-center">
+				     	<i class="fa fa-hashtag fa-5x" aria-hidden="true"></i>
+				     	<div class="caption">
+				     		<span>PAGAR</span>
+				     	</div>
+				    </a>
+				  </div>
+
+				</div>
+				
+
+				
+
+				<div class="clear"></div>
+				<div class="logout">
+					<button class="btn btn-success" onclick="logout()">LOGOUT</button>
+					
+				</div>
+
+			</div>
+
+
+
+		</div>  
+<!--<div valign=center id="ws-status"> Waiting...</div> -->
+</body>
+</html>
