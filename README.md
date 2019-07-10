@@ -18,4 +18,4 @@ sudo pip3 install --upgrade pip
 ```python 3
 sudo pip3 install tornado
 ```
-finally you can use this source code for you to control the relay or led according to the port initialization that has been configured on server.py on a localhost basis
+finally you can use this source code for you to control the relay or led according to the port initialization that has been configured on server.py and you just type on your  browser localhost then Tornado web server work
